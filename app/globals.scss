@@ -40,32 +40,3 @@ body {
   font-weight: 500;
   color: #ddd8d8;
 }
-
-h1 {
-  font-size: 3rem;
-  margin: 3rem auto;
-  color: #ede9f3;
-  font-family: 'Poppins', sans-serif;
-}
-h2 {
-  font-size: 2rem;
-  color: #d7d0e1;
-  font-family: 'Poppins', sans-serif;
-}
-
-p {
-  font-size: 1.5rem;
-
-  a {
-    color: #f4c33d;
-    text-decoration: none;
-    padding-bottom: 0.05rem;
-    border-bottom: 2px solid #f4c33d;
-
-    &:hover,
-    &:active {
-      color: #bd3df4;
-      border-color: #bd3df4;
-    }
-  }
-}
