@@ -55,21 +55,17 @@ h2 {
 
 p {
   font-size: 1.5rem;
-}
 
-p a {
-  color: #f4c33d;
-  text-decoration: none;
-  padding-bottom: 0.05rem;
-  border-bottom: 2px solid #f4c33d;
-}
+  a {
+    color: #f4c33d;
+    text-decoration: none;
+    padding-bottom: 0.05rem;
+    border-bottom: 2px solid #f4c33d;
 
-p a:hover,
-p a:active {
-  color: #bd3df4;
-  border-color: #bd3df4;
-}
-
-.wrapper {
-  padding: 20px;
+    &:hover,
+    &:active {
+      color: #bd3df4;
+      border-color: #bd3df4;
+    }
+  }
 }

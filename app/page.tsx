@@ -1,4 +1,4 @@
-import classes from './page.module.css';
+import classes from './page.module.scss';
 import Link from 'next/link';
 
 export default function Home() {
