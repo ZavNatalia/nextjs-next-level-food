@@ -1,8 +1,42 @@
-export default function MealPage({params}: {params: {mealSlug: string}}) {
+import classes from './page.module.scss';
+import Image from 'next/image';
+import { getMeal } from '@/lib/meals';
+import { MealItemType } from '@/components/meals/meal-item';
+import { notFound } from 'next/navigation';
+
+export default function MealPage({params}: { params: { mealSlug: string } }) {
+    const meal: MealItemType = getMeal(params.mealSlug);
+
+    if (!meal) {
+        notFound();
+    }
+
+    meal.instructions = meal.instructions.replace(/\n/g, '<br />');
 
     return (
-        <div>
-            <h2>Meal {params.mealSlug}</h2>
-        </div>
+        <>
+            <header className={classes.header}>
+                <div className={classes.image}>
+                    <Image src={meal.image} fill alt={meal.title}/>
+                </div>
+                <div className={classes.headerText}>
+                    <h1>{meal.title}</h1>
+                    <p className={classes.creator}>
+                        by <a href={`mailto:${meal.creatorEmail}`}>{meal.creator}</a>
+                    </p>
+                    <p className={classes.summary}>
+                        {meal.summary}
+                    </p>
+                </div>
+            </header>
+            <main>
+                <p
+                    className={classes.instructions}
+                    dangerouslySetInnerHTML={{
+                        __html: meal.instructions,
+                    }}>
+                </p>
+            </main>
+        </>
     )
 }

@@ -8,3 +8,8 @@ export async function getMeals(): Promise<MealItemType[]> {
     // @ts-ignore
     return db.prepare('SELECT * FROM meals').all();
 }
+
+export function getMeal(slug: string): MealItemType {
+    // @ts-ignore
+    return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
+}
