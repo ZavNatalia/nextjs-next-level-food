@@ -9,14 +9,17 @@ export type MealItemType =  {
     slug: string,
     image: string,
     summary: string,
+    instructions: string,
     creator: string,
+    creatorEmail: string,
 }
 
 interface MealItemProps {
     meal: MealItemType
 }
 
-export default function MealItem({ title, slug, image, summary, creator }: MealItemProps) {
+export default function MealItem({ meal }: MealItemProps) {
+    const { title, slug, image, summary, creator} = meal;
     return (
         <article className={classes.meal}>
             <header>

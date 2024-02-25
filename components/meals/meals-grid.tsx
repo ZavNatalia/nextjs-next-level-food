@@ -10,7 +10,7 @@ export default function MealsGrid({meals}: MealsGridProps) {
         {meals?.map(meal => {
             return (
                 <li key={meal.id}>
-                    <MealItem {...meal} />
+                    <MealItem meal={meal} />
                 </li>
             )
         })}
