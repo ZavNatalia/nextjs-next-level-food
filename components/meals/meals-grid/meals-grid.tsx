@@ -1,8 +1,9 @@
 import classes from './meals-grid.module.scss';
-import MealItem, { MealItemType } from '@/components/meals/meal-item';
+import MealItem from '@/components/meals/meal-item/meal-item';
+import { IMealItem } from '@/interfaces/meal.interface';
 
 interface MealsGridProps {
-    meals: MealItemType[];
+    meals: IMealItem[];
 }
 
 export default function MealsGrid({meals}: MealsGridProps) {

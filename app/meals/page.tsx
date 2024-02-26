@@ -1,12 +1,12 @@
 import classes from './page.module.scss';
 import Link from 'next/link';
-import MealsGrid from '@/components/meals/meals-grid';
+import MealsGrid from '@/components/meals/meals-grid/meals-grid';
 import { getMeals } from '@/lib/meals';
-import { MealItemType } from '@/components/meals/meal-item';
 import React, { Suspense } from 'react';
+import { IMealItem } from '@/interfaces/meal.interface';
 
 async function Meals() {
-    const meals: MealItemType[] = await getMeals();
+    const meals: IMealItem[] = await getMeals();
     return <MealsGrid meals={meals}/>
 }
 

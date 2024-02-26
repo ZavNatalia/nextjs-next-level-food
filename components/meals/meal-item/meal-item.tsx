@@ -2,20 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import classes from './meal-item.module.scss';
-
-export type MealItemType =  {
-    id: string,
-    title: string,
-    slug: string,
-    image: string,
-    summary: string,
-    instructions: string,
-    creator: string,
-    creatorEmail: string,
-}
+import { IMealItem } from '@/interfaces/meal.interface';
 
 interface MealItemProps {
-    meal: MealItemType
+    meal: IMealItem
 }
 
 export default function MealItem({ meal }: MealItemProps) {
@@ -24,7 +14,7 @@ export default function MealItem({ meal }: MealItemProps) {
         <article className={classes.meal}>
             <header>
                 <div className={classes.image}>
-                    <Image src={image} alt={title} fill />
+                    <Image src={image} alt='Meal image' fill />
                 </div>
                 <div className={classes.headerText}>
                     <h2>{title}</h2>
