@@ -5,6 +5,11 @@ import { getMeals } from '@/lib/meals';
 import React, { Suspense } from 'react';
 import { IMealItem } from '@/interfaces/meal.interface';
 
+export const metadata = {
+    title: 'All meals',
+    description: 'Browse the delicious meals shared by our vibrant community.',
+};
+
 async function Meals() {
     const meals: IMealItem[] = await getMeals();
     return <MealsGrid meals={meals}/>

@@ -1,9 +1,11 @@
+'use client';
 import ImagePicker from '@/components/meals/image-picker/image-picker';
 import { shareMeal } from '@/lib/actions';
 import classes from './page.module.scss';
 import MealsFormSubmit from '@/components/meals/meals-form-submit/meals-form-submit';
 
 export default function ShareMealPage() {
+
     return (
         <>
             <header className={classes.header}>

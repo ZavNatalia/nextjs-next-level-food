@@ -1,10 +1,10 @@
 export interface IMealItem {
     id?: string,
     title: string,
-    summary?: string,
+    summary: string,
     instructions: string,
     slug?: string,
     image?: any,
-    creator?: string,
-    creator_email?: string,
+    creator: string,
+    creator_email: string,
 }

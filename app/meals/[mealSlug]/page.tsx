@@ -1,10 +1,26 @@
 import classes from './page.module.scss';
 import Image from 'next/image';
-import { getMeal } from '@/lib/meals';
+import { getMeal, getMeals } from '@/lib/meals';
 import { notFound } from 'next/navigation';
 import { IMealItem } from '@/interfaces/meal.interface';
+import { Metadata } from 'next';
 
-export default function MealPage({params}: { params: { mealSlug: string } }) {
+type Props = {
+    params: { mealSlug: string }
+}
+
+export async function generateMetadata({params}: Props): Promise<Metadata> {
+    const meal = getMeal(params.mealSlug);
+    if (!meal) {
+        notFound();
+    }
+    return {
+        title: meal?.title + ' | NEXTLEVEL FOOD',
+        description: meal?.summary,
+    }
+}
+
+export default function MealDetailsPage({params}: { params: { mealSlug: string } }) {
     const meal: IMealItem = getMeal(params.mealSlug);
 
     if (!meal) {

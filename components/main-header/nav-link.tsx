@@ -1,9 +1,15 @@
 "use client"
+import { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import classes from './nav-link.module.scss';
 import Link from 'next/link';
 
-export default function NavLink({href, children}) {
+interface NavLinkProps {
+    href: string,
+    children: ReactNode
+}
+
+export default function NavLink({href, children}: NavLinkProps) {
     const pathname = usePathname();
     return <Link
         href={href}
